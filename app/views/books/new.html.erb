@@ -2,11 +2,15 @@
 <%= form_with model: @book, url: '/books', method: :post do |f| %>
   <div class="field">
     <label for="book_title">Title</label>
-    <%= f.text_field :title %>
+    <li class="book_title">
+      <%= f.text_field :title %>
+    </li>
   </div>
   <div class="field">
     <label for="book-body">Body</label>
-    <%= f.text_area :body %>
+    <li class="book_body">
+      <%= f.text_area :body %>
+    </li>
   </div>
   <div class="actions">
     <%= f.submit 'Create Book' %>
