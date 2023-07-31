@@ -14,7 +14,7 @@ class BooksController < ApplicationController
       render :index
     end
   end
-  
+
 
   def index
     @books = Book.all
@@ -40,8 +40,11 @@ class BooksController < ApplicationController
   end
 
   def destroy
-    book = Book.find(params[:id])
-    book.destroy
+    @book = Book.find(params[:id])
+    if @book.destroy
+      flash[:notice] = "Book was successfully destroyed."
+    end
+
     redirect_to '/books'
   end
 
