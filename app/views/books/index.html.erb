@@ -25,7 +25,7 @@
   <% if @book.errors.any? %>
     <div id="error_explanation">
       <h2>
-        <%= @book.errors.count %>errors prohibited this book from being saved:
+        <%= @book.errors.count %> errors prohibited this book from being saved:
       </h2>
       <ul>
         <%= @book.errors.full_messages.each do |message| %>
@@ -42,10 +42,10 @@
     <%= f.text_field :title, :class => 'book_title' %>
   </div>
   <div class="field">
-    <label for="book-body">Body</label>
+    <label for="book_body">Body</label>
     <%= f.text_area :body, :class => 'book_body' %>
   </div>
   <div class="actions">
-    <%= f.submit 'Create Book' %>
+    <%= f.submit 'Create Book', class: 'book_submit' %>
   </div>
 <% end %>
